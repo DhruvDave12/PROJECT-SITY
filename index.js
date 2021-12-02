@@ -108,6 +108,12 @@ app.use((req,res,next) => {
 app.get('/', (req,res) => {
     res.render('home.ejs');
 })
+app.get('/aboutUs', (req,res) => {
+    res.render('aboutUs.ejs');
+})
+app.get('/shop', (req,res) => {
+    res.render('shopIndex.ejs');
+})
 // SIGNUP ROUTE
 app.get('/signup', async (req, res) => {
     res.render('customerSignup.ejs');
