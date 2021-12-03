@@ -7,10 +7,9 @@ const imageSchema = new mongoose.Schema({
 imageSchema.virtual('thumbnail').get(function () {
     return this.url.replace('/upload', '/upload/w_200');
 });
-
 const taskSchema = new mongoose.Schema({
     contactNumber: {
-        type: String,
+        type: Number,
         sparse: true,
     },
     images: [imageSchema],

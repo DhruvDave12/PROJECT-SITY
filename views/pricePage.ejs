@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- NavBar -->
-    <div class="nb" style>
+   
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="http://localhost:8080/home">S.I.T.Y</a>
 
@@ -37,9 +37,9 @@
 
             </div>
         </nav>
-    </div>
+ 
 
-    <div class='light x1'></div>
+  <div class='light x1'></div>
   <div class='light x2'></div>
   <div class='light x3'></div>
   <div class='light x4'></div>
@@ -49,10 +49,12 @@
   <div class='light x8'></div>
   <div class='light x9'></div>
 
-    <div class="container">
+    
         <div class="row">
-            <div class="col-md-6">
-                <div class="card">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                
                     <form action="/customer/<%= workers._id %>/tasks/<%= task._id %>" method = "POST" class = "box">
 
                         <h2 class = "text-light mb-5">ENTER YOUR PRICE</h2>
@@ -70,10 +72,11 @@
                         <button id = "btn">Submit</button>
                 
                     </form>
-                </div>
+                
             </div>
+            <div class="col-md-4"></div>
         </div>
-    </div>
+  
     
 
 

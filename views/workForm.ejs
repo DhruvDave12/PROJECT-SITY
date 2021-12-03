@@ -28,8 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home<span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/aboutUs">About Us</a>
@@ -37,7 +36,7 @@
 
                     <li class="nav-item active">
                         <a class="nav-link" href="/shop">Shop</a>
-                      </li>
+                    </li>
                 </ul>
 
             </div>
@@ -48,99 +47,104 @@
 
 
 
-  <div class='light x1'></div>
-  <div class='light x2'></div>
-  <div class='light x3'></div>
-  <div class='light x4'></div>
-  <div class='light x5'></div>
-  <div class='light x6'></div>
-  <div class='light x7'></div>
-  <div class='light x8'></div>
-  <div class='light x9'></div>
+    <div class='light x1'></div>
+    <div class='light x2'></div>
+    <div class='light x3'></div>
+    <div class='light x4'></div>
+    <div class='light x5'></div>
+    <div class='light x6'></div>
+    <div class='light x7'></div>
+    <div class='light x8'></div>
+    <div class='light x9'></div>
 
 
 
 
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <form action="/taskform/<%= id %>" , method="POST" class="box" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4"></div>
 
-                        <h1 class = "text-white mb-5">TASK FORM</h1>
-                        <!-- Contact Details -->
-                        <label for="contact" class="text-muted">Contact Details</label>
-                        <input type="text" id="contact" placeholder="Contact Number" name="contactDet">
-                        
-                        
-                        <!-- Address -->
+        <div class="col-md-4">
 
-                        <label for="address" class="text-muted">Enter Address of Area</label>
-                        <textarea name="addToClean" id="" cols="30" rows="5" id="address"></textarea>
+            <form action="/taskform/<%= id %>" , method="POST" class="box" enctype="multipart/form-data">
 
-                        <!-- Type of Work -->
-                        <label for="word" class = "text-muted">Task to get done</label>
-                        <select name="workType" id="word">
-
-                            <option value="sewage">Sewage Cleaning</option>
-                            <option value="tankCleaning">Tank Cleaning</option>
-                            <option value="garbageCleaning">Garbage Cleaning and Collection</option>
-                            <option value="houseCleaning">House Cleaning</option>
-                            <option value="carWashing">Car Washing</option>
-                            <option value="solarPanel">Solar Panel Cleaning</option>
-
-                        </select>
+                <h1 class="text-white mb-5">TASK FORM</h1>
+                <!-- Contact Details -->
+                <label for="contact" class="text-muted">Contact Details</label>
+                <input type="text" id="contact" placeholder="Contact Number" name="contactDet">
 
 
-                        <!-- Image of Garbage  -->
-                        <label for="formFile">Add Images</label>
-                        <input type="file" name="image" id = "formFile" multiple >
+                <!-- Address -->
 
-                        <button id="btn">Submit</button>
-                    </form>
+                <label for="address" class="text-muted">Enter Address of Area</label>
+                <textarea name="addToClean" id="" cols="30" rows="5" id="address"></textarea>
 
-                </div>
-            </div>
+                <!-- Type of Work -->
+                <label for="word" class="text-muted">Task to get done</label>
+                <select name="workType" id="word">
+
+                    <option value="sewage">Sewage Cleaning</option>
+                    <option value="tankCleaning">Tank Cleaning</option>
+                    <option value="garbageCleaning">Garbage Cleaning and Collection</option>
+                    <option value="houseCleaning">House Cleaning</option>
+                    <option value="carWashing">Car Washing</option>
+                    <option value="solarPanel">Solar Panel Cleaning</option>
+
+                </select>
+
+
+                <!-- Image of Garbage  -->
+                <label for="formFile" class = "text-muted">Add Images</label>
+                <input type="file" name="image" id="formFile" multiple>
+
+                <button id="btn">Submit</button>
+            </form>
+
+
         </div>
+
+        <div class="col-md-4"></div>
+
     </div>
 
 
-    <footer class="container-fluid bg-grey py-5" id = "foot">
+
+
+
+    <footer class="container-fluid bg-grey py-5" id="foot">
         <div class="container">
-                 <div class="row">
-                    <div class="col-md-4 mx-auto">
-                       <div class="logo-part">
-                          <!-- <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" > -->
-                          <h1 class = "display-3 mr-5">S.I.T.Y</h1>
-                          <p class = "lead">This is a project based on smartCity where,</p>
-                          <p class = "lead">We can make city smart and manage waste through this small project of ours.</p>
-                       </div>
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="logo-part">
+                        <!-- <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" > -->
+                        <h1 class="display-3 mr-5">S.I.T.Y</h1>
+                        <p class="lead">This is a project based on smartCity where,</p>
+                        <p class="lead">We can make city smart and manage waste through this small project of ours.</p>
                     </div>
-                    <div class="col-md-4 px-4 mt-4">
-                       <h6> About S.I.T.Y</h6>
-                       <p>Trying to make a difference in society</p>
-                       <a href="/abousUs.html" class="btn-footer"> About Us </a><br>
-                    </div>
-                    <div class="col-md-4 mx-auto mt-4">
-                       <div class="row" id = "sH">
-                          <div class="col-md-6 mx-auto" id = "socHand">
-                             <h6> Social Handles</h6>
-                             <div class="social">
+                </div>
+                <div class="col-md-4 px-4 mt-4">
+                    <h6> About S.I.T.Y</h6>
+                    <p>Trying to make a difference in society</p>
+                    <a href="/abousUs.html" class="btn-footer"> About Us </a><br>
+                </div>
+                <div class="col-md-4 mx-auto mt-4">
+                    <div class="row" id="sH">
+                        <div class="col-md-6 mx-auto" id="socHand">
+                            <h6> Social Handles</h6>
+                            <div class="social">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                             </div>
-                          </div>
-                       </div>
+                            </div>
+                        </div>
                     </div>
-                 </div>
-              </div>
-              
-           </div>
+                </div>
+            </div>
         </div>
-        </footer>
 
-        
+        </div>
+        </div>
+    </footer>
+
+
 
     <script src="/extra.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

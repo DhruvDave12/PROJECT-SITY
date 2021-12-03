@@ -248,13 +248,12 @@ body {
 }
 
 .box {
-    width: 500px;
-    padding: 40px;
-    position: absolute;
+    /* width: 500px; */
+    padding: 40px; 
+    /* position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50%; */
     background: #191919;
-    ;
     text-align: center;
     transition: 0.25s;
     margin-top: 100px
@@ -439,4 +438,8 @@ height: 100%;
     margin-top: 65%;
 }
 
-
+@media only screen and (max-width: 768px) {
+  .box{
+    width: 400px;
+  }
+}

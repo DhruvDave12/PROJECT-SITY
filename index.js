@@ -32,6 +32,7 @@ db.once("open", () => {
     console.log("DATABASE CONNECTED");
 });
 
+var indexx = 0;
 
 // use stuff
 app.use(express.urlencoded({ extended: true }));
@@ -249,6 +250,8 @@ app.post('/taskform/:id', upload.array('image'),async (req,res) => {
     })
     newTask.images = req.files.map(f => ({url: f.path, fileName: f.filename}));
     newTask.owner = id;
+    newTask.contactNumber = indexx++;
+
     await newTask.save();
     // res.send(req.body, req.files);
     res.redirect(`/homepage/${id}`);

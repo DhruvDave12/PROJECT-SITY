@@ -257,27 +257,19 @@ body {
 }
 
 
-
-
-
-
-
-
-.card {
-    margin-bottom: 20px;
-    border: none
-}
-
 .box {
-    width: 500px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    /* width: 500px; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    /* position: absolute;
+    top: %;
+    left: 20%; */
+    margin-top: 10%;
     background: #191919;
     text-align: center;
     transition: 0.25s;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     /* margin-bottom: 40px; */
 }
 

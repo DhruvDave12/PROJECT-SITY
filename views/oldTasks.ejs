@@ -20,113 +20,111 @@
 
 <body>
 
-    <!-- NavBar -->
-    <div class="nb" style>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="http://localhost:8080/home">S.I.T.Y</a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="http://localhost:8080/home">S.I.T.Y</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/aboutUs">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop">Shop</a>
+                </li>
+                <% if(currentUser) { %>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home<span
-                                class="sr-only">(current)</span></a>
+                        <a href="/logout" class="nav-link">Logout</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/aboutUs">About Us</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/shop">Shop</a>
-                    </li>
-                    <% if(currentUser) { %>
-                        <li class="nav-item active">
-                            <a href="/logout" class="nav-link">Logout</a>
-                        </li>
+                    <% } else { %>
+                        <a href="/login" class="nav-link">Login</a>
+                        <a href="/signup" class="nav-link">Signup</a>
+                        <% } %>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="d-flex flex-column align-items-center">
+        <h1>Hello, <%= user.username %> <br> Here are your tasks</h1>
+
+        <% for(let tasks of oldTask) { %>
+            <div class="card mb-3" style="width: 22rem; border:1px solid black;">
+                <div class="card-body">
+                    <h5 class="card-title">Work Type: <%= tasks.task %>
+                    </h5>
+                    <% if(tasks.status==='Accepted' ) { %>
+                        <h5 class="card-title">Status: <span class="text-success">
+                                <%= tasks.status %>
+                            </span> </h5>
                         <% } else { %>
-                            <a href="/login" class="nav-link">Login</a>
-                            <a href="/signup" class="nav-link">Signup</a>
+                            <h5 class="card-title text-danger">Status: <span class="text-danger">Not Accepted</span>
+                            </h5>
                             <% } %>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4" id = "main">
-            <h1>Hello, <%= user.username %> <br> Here are your tasks</h1>
-
-            <% for(let tasks of oldTask) { %>
-                <div class="card mb-3" style="width: 22rem; border:1px solid black;">
-                    <div class="card-body">
-                        <h5 class="card-title">Work Type: <%= tasks.task %>
-                        </h5>
-                        <% if(tasks.status==='Accepted' ) { %>
-                            <h5 class="card-title">Status: <span class="text-success">
-                                    <%= tasks.status %>
-                                </span> </h5>
-                            <% } else { %>
-                                <h5 class="card-title text-danger">Status: <span class="text-danger">Not Accepted</span> </h5>
-                                <% } %>
-                                    <% if(tasks.workerName && tasks.status==='Accepted' ) { %>
-                                        <h5 class="card-title">Done By: <%= tasks.workerName %>
+                                <% if(tasks.workerName && tasks.status==='Accepted' ) { %>
+                                    <h5 class="card-title">Done By: <%= tasks.workerName %>
+                                    </h5>
+                                    <h5 class="card-title">Contact Number: <%= tasks.contactNumber %>
+                                    </h5>
+                                    <% if(tasks.date && tasks.status==='Accepted' ) {%>
+                                        <h5 class="card-title">Date of Completion: <%= tasks.date %>
                                         </h5>
-                                        <h5 class="card-title">Contact Number: <%= tasks.contactNumber %>
-                                        </h5>
-                                        <% if(tasks.date && tasks.status==='Accepted' ) {%>
-                                            <h5 class="card-title">Date of Completion: <%= tasks.date %>
-                                            </h5>
-                                            <% } %>
-                    </div>
-                    <% } %>
-        
+                                        <% } %>
                 </div>
                 <% } %>
-        </div>
-        <div class="col-4"></div>
 
+            </div>
+            <% } %>
     </div>
 
-    
 
 
-            <!-- Footer -->
-            <footer class="container-fluid bg-grey py-5" id="foot">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 mx-auto">
-                            <div class="logo-part">
-                                <!-- <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" > -->
-                                <h1 class="display-3 mr-5">S.I.T.Y</h1>
-                                <p class="lead">This is a project based on smartCity where,</p>
-                                <p class="lead">We can make city smart and manage waste through this small project of
-                                    ours.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 px-4 mt-4">
-                            <h6> About S.I.T.Y</h6>
-                            <p>Trying to make a difference in society</p>
-                            <a href="/abousUs.html" class="btn-footer"> About Us </a><br>
-                        </div>
-                        <div class="col-md-4 mx-auto mt-4">
-                            <div class="row" id="sH">
-                                <div class="col-md-6 mx-auto" id="socHand">
-                                    <h6> Social Handles</h6>
-                                    <div class="social">
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-grey py-5" id="foot">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="logo-part">
+                        <!-- <img src="https://i.ibb.co/sHZz13b/logo.png" class="w-50 logo-footer" > -->
+                        <h1 class="display-3 mr-5">S.I.T.Y</h1>
+                        <p class="lead">This is a project based on smartCity where,</p>
+                        <p class="lead">We can make city smart and manage waste through this small project of
+                            ours.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 px-4 mt-4">
+                    <h6> About S.I.T.Y</h6>
+                    <p>Trying to make a difference in society</p>
+                    <a href="/abousUs.html" class="btn-footer"> About Us </a><br>
+                </div>
+                <div class="col-md-4 mx-auto mt-4">
+                    <div class="row" id="sH">
+                        <div class="col-md-6 mx-auto" id="socHand">
+                            <h6> Social Handles</h6>
+                            <div class="social">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                </div>
-            </footer>
+            </div>
+        </div>
+        </div>
+        </div>
+    </footer>
 </body>
 
 </html>

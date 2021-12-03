@@ -93,15 +93,22 @@ border: 2px solid #000;
 margin-left: 100px;
 }
 
-.rteam{
+/* .rteam{
   margin:10px;
-}
+} */
 
 
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
       display: block;
+    }
+    #df{
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      width: 650px;
+      margin-left: 5%;
     }
   }
 
